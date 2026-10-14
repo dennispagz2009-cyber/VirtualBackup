@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.virtualbackup'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.virtualbackup'
+        minSdk 21
+        targetSdk 28
+        versionCode 3
+        versionName '1.2-compatibility-test'
+    }
+}
