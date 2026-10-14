@@ -124,13 +124,15 @@ public class MainActivity extends Activity implements OnClickListener {
 							runOnUiThread(new Runnable() {
 								@Override public void run() {
 									status.setText(source.getAbsolutePath() + "\n\n-->\n\n" + destination.getAbsolutePath() + "\n\n" + message);
-									Toast.makeText(MainActivity.this, message.startsWith("COPY FAILED") ? "Copy failed" : R.string.ended, Toast.LENGTH_LONG).show();
-								}
-							});
-						}
-					}).start();
-				}
-			}).create().show();
+									String toastMessage = message.startsWith("COPY FAILED")
+        ? "Copy failed"
+        : getString(R.string.ended);
+
+Toast.makeText(
+        MainActivity.this,
+        toastMessage,
+        Toast.LENGTH_LONG
+).show();
 	}
 
 
